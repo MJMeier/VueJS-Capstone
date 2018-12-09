@@ -20,7 +20,8 @@
               <a class="nav-link" <router-link to="/signup">Signup</router-link> | <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item"><a class="nav-link" <router-link to="/login">Login</router-link> | </a></li>
-            <li class="nav-item"><a class="nav-link" router-link to="/logout">Logout</router-link> </a></li>
+            <li class="nav-item"><a class="nav-link" <router-link to="/logout">Logout</router-link> | </a></li>
+            <li class="nav-item"><a class="nav-link" <router-link to="/picks">View My Picks</router-link></a></li>
           </ul>
         </div>
       </nav>

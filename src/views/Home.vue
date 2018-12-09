@@ -2,56 +2,29 @@
   <div class="home">
     <h1>{{ message }}</h1>
     <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <p>Home Team</p>
-          <div v-for="game in games">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-              <label class="form-check-label" for="defaultCheck1"> Make Pick </label>
-            </div>
-
-            <h2>{{ game.home_team }}</h2>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Example select</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <p>score {{ game.home_score }}</p>
+      <form v-on:submit.prevent="savePicks();">
+        <div v-for="game in games" class="row">
+          <span v-on:click="game.game_id = game.id;"></span>
+          <div class="col-md-2"><input type="number" v-model="game.confidence_point" /></div>
+          <div class="col-md-5">
+            <h4 v-on:click="game.users_pick = game.home_nickname;">{{ game.home_nickname }}</h4>
           </div>
-        </div>
-        <div class="col-sm">
-          <p>Away Team</p>
-          <div v-for="game in games">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-              <label class="form-check-label" for="defaultCheck1"> Make Pick </label>
-            </div>
-            <h2>{{ game.away_team }}</h2>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Example select</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <p>score {{ game.away_score }}</p>
+          <div class="col-md-5">
+            <h4 v-on:click="game.users_pick = game.visitor_nickname;">{{ game.visitor_nickname }}</h4>
           </div>
+          <p>You chose {{ game.users_pick }}</p>
         </div>
-      </div>
+        <input type="submit" value="Save picks" />
+      </form>
     </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.chosen {
+  color: green;
+}
+</style>
 
 <script>
 var axios = require("axios");
@@ -68,10 +41,40 @@ export default {
       function(response) {
         console.log(response.data);
         this.games = response.data;
+        var point = this.games.length;
+        this.games.forEach(function(game) {
+          game.confidence_point = point;
+          point -= 1;
+        });
       }.bind(this)
     );
   },
-  methods: {},
+  methods: {
+    savePicks: function() {
+      console.log("savePicks");
+      this.games.forEach(game => {
+        console.log("Pick info:", game.id, game.confidence_point, game.users_pick);
+        var params = {
+          game_id: game.id,
+          confidence_point: game.confidence_point,
+          users_pick: game.users_pick
+        };
+        axios
+          .post("http://localhost:3000/api/user_games", params)
+          .then(
+            function(response) {
+              console.log(response);
+              this.user_games.push(response.data);
+            }.bind(this)
+          )
+          .catch(
+            function(error) {
+              console.log(error.response);
+            }.bind(this)
+          );
+      });
+    }
+  },
   computed: {}
 };
 </script>
