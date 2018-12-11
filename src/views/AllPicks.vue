@@ -5,6 +5,7 @@
       <h2>{{ allpick.users_pick }}</h2>
       <p> {{ allpick.confidence_point }}</p>
       <p>{{ allpick.user_name }}</p>
+      <p>{{ allpick.game_date }}</p>
     </div>
   </div>
 </template>

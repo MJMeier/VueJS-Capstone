@@ -135,7 +135,8 @@ export default {
         var params = {
           game_id: game.id,
           confidence_point: game.confidence_point,
-          users_pick: game.users_pick
+          users_pick: game.users_pick,
+          game_date: game.date
         };
         axios
           .post("http://localhost:3000/api/user_games", params)
