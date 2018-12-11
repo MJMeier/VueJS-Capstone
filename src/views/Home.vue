@@ -1,5 +1,83 @@
 <template>
   <div class="home">
+    <div class="kode_banner_1">
+      <div class="main_banner">
+        <div>
+          <!-- Banner Thumb START -->
+          <div class="thumb">
+            <img src="extra-images/banner1.jpg" alt="" />
+            <div class="container">
+              <div class="banner_caption text-center">
+                <span>Season Opening !!</span>
+                <h1>Giant Sharks <b>vs</b> Flying Eagles</h1>
+                <p>Sep 09, Aguana Stadium North London , UK</p>
+                <a href="#" class="btn-1">Buy Tickets Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Banner Thumb End -->
+        </div>
+        <div>
+          <!-- Banner Thumb START -->
+          <div class="thumb">
+            <img src="extra-images/banner2.jpg" alt="" />
+            <div class="container">
+              <div class="banner_caption text-left">
+                <span>Season Opening !!</span>
+                <h1>Giant Sharks <b>vs</b> Flying Eagles</h1>
+                <p>Sep 09, Aguana Stadium North London , UK</p>
+                <a href="#" class="btn-1">Buy Tickets Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Banner Thumb End -->
+        </div>
+        <div>
+          <!-- Banner Thumb START -->
+          <div class="thumb">
+            <img src="extra-images/banner3.jpg" alt="" />
+            <div class="container">
+              <div class="banner_caption text-right">
+                <span>Season Opening !!</span>
+                <h1>Giant Sharks <b>vs</b> Flying Eagles</h1>
+                <p>Sep 09, Aguana Stadium North London , UK</p>
+                <a href="#" class="btn-1">Buy Tickets Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- Banner Thumb End -->
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="kode_content_wrap">
+        <div class="result_slide_wrap">
+            <div class="result_slider">
+                <div v-for="game in games">
+                    <div class="kf_result_thumb">
+                      <span>Sep 1, 2016 <em>2:15 pm</em></span>
+                      <div class="kf_result">
+                            <div class="figure pull-left">
+                                <figure >
+                                    <img src="extra-images/flag1.png" alt="">
+                                </figure>
+                                <a href="#">{{ game.home_nickname }}</a>
+                            </div>
+                            <span>vs</span>
+                            <div class="figure pull-right">
+                                <figure >
+                                    <img src="extra-images/flag2.png" alt="">
+                                </figure>
+                                <a href="#">{{ game.visitor_nickname }}</a>
+                            </div>
+                      </div>
+                      <a href="#">Arizona Ground</a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div> -->
+
     <h1>{{ message }}</h1>
     <div class="container">
       <form v-on:submit.prevent="savePicks();">

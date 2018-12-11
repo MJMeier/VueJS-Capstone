@@ -2,9 +2,8 @@
   <div class="container">
     <h1>My Picks</h1>
     <div v-for="pick in picks">
-      <h2>{{ pick.user_pick }}</h2>
+      <h2>{{ pick.users_pick }}</h2>
     </div>
-    {{ picks }}
   </div>
 </template>
 
