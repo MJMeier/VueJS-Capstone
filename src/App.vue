@@ -33,17 +33,6 @@
       <div class="kf_top_bar">
         <div class="container">
           <div class="pull-left">
-            <ul class="kf_social2">
-              <li>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fa fa-rss"></i></a>
-              </li>
-            </ul>
           </div>
           <div class="kf_right_dec">
             <ul class="kf_topdec">
@@ -64,6 +53,8 @@
               <li class="nav-item"><a class="nav-link" <router-link to="/home">Home</router-link>  </a></li>
 
               <li class="nav-item"><a class="nav-link" <router-link to="/picks">View My Picks</router-link></a></li>
+
+              <li class="nav-item"><a class="nav-link" <router-link to="/allpicks">View All Picks</router-link></a></li>
 
 
             </ul>
