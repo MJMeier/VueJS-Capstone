@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import MakePicks from "./views/MakePicks.vue";
 import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Signup from "./views/Signup.vue";
@@ -12,12 +13,13 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-    { path: "/home", name: "home", component: Home },
+    { path: "/makepicks", name: "makepicks", component: MakePicks },
     { path: "/about", name: "about", component: About },
     { path: "/signup", name: "signup", component: Signup },
     { path: "/login", name: "login", component: Login },
     { path: "/logout", name: "logout", component: Logout },
     { path: "/picks", name: "picks", component: Picks },
-    { path: "/allpicks", name: "allpicks", component: AllPicks }
+    { path: "/allpicks", name: "allpicks", component: AllPicks },
+    { path: "/home", name: "home", component: Home }
   ]
 });

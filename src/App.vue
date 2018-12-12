@@ -52,6 +52,8 @@
 
               <li class="nav-item"><a class="nav-link" <router-link to="/home">Home</router-link>  </a></li>
 
+              <li class="nav-item"><a class="nav-link" <router-link to="/makepicks">Make Picks</router-link>  </a></li>
+
               <li class="nav-item"><a class="nav-link" <router-link to="/picks">View My Picks</router-link></a></li>
 
               <li class="nav-item"><a class="nav-link" <router-link to="/allpicks">View All Picks</router-link></a></li>
