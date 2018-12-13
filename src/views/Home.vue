@@ -20,7 +20,7 @@
           <a href="#">{{ game.visitor_nickname }}  {{ game.visitor_score }}</a>
         </div>
       </div>
-      <!-- <a href="#">Arizona Ground</a> -->
+      <a href="#">{{ game.period_status }}</a>
     </div>
       <aside class="col-md-4">
           <!--Widget Ranking Start-->
@@ -124,8 +124,21 @@ export default {
         this.users = response.data;
       }.bind(this)
     );
+
+    this.updateGames();
   },
-  methods: {},
+  mounted() {},
+  methods: {
+    updateGames: function() {
+      var self = this;
+      setInterval(function() {
+        axios.get("http://localhost:3000/api/games").then(function(response) {
+          console.log(response.data);
+          self.games = response.data;
+        });
+      }, 10000);
+    }
+  },
   computed: {}
 };
 </script>
