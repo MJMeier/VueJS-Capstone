@@ -3,6 +3,7 @@
     <h1>My Picks</h1>
     <div v-for="pick in picks">
       <h2>{{ pick.users_pick }}</h2>
+      <p>confidence point - {{ pick.confidence_point }}</p>
     </div>
   </div>
 </template>

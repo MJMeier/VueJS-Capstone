@@ -18,34 +18,6 @@
           <!-- Banner Thumb End -->
         </div>
         <div>
-          <!-- Banner Thumb START -->
-          <div class="thumb">
-            <img src="extra-images/banner2.jpg" alt="" />
-            <div class="container">
-              <div class="banner_caption text-left">
-                <span>Season Opening !!</span>
-                <h1>Giant Sharks <b>vs</b> Flying Eagles</h1>
-                <p>Sep 09, Aguana Stadium North London , UK</p>
-                <a href="#" class="btn-1">Buy Tickets Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- Banner Thumb End -->
-        </div>
-        <div>
-          <!-- Banner Thumb START -->
-          <div class="thumb">
-            <img src="extra-images/banner3.jpg" alt="" />
-            <div class="container">
-              <div class="banner_caption text-right">
-                <span>Season Opening !!</span>
-                <h1>Giant Sharks <b>vs</b> Flying Eagles</h1>
-                <p>Sep 09, Aguana Stadium North London , UK</p>
-                <a href="#" class="btn-1">Buy Tickets Now</a>
-              </div>
-            </div>
-          </div>
-          <!-- Banner Thumb End -->
         </div>
       </div>
     </div>
