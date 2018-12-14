@@ -8,6 +8,7 @@ import Login from "./views/Login.vue";
 import Logout from "./views/Logout.vue";
 import Picks from "./views/Picks.vue";
 import AllPicks from "./views/AllPicks.vue";
+import Chat from "./views/Chat.vue";
 
 Vue.use(Router);
 
@@ -20,6 +21,7 @@ export default new Router({
     { path: "/logout", name: "logout", component: Logout },
     { path: "/picks", name: "picks", component: Picks },
     { path: "/allpicks", name: "allpicks", component: AllPicks },
-    { path: "/home", name: "home", component: Home }
+    { path: "/home", name: "home", component: Home },
+    { path: "/chat", name: "chat", component: Chat }
   ]
 });
