@@ -1,5 +1,14 @@
 <template>
   <div class="home">
+    <div class="thumb">
+  <img src="extra-images/basketball.jpg" alt="" />
+  <div class="container">
+    <div class="banner_caption text-center">
+      <span>Go Hard in the Paint</span>
+      <h1>NBA Confidence Pick 'Em League</h1>
+    </div>
+  </div>
+</div>
     <h1>{{ message }}</h1>
     <div v-for="game in games" class="kf_result_thumb">
       <span>Dec 11, 2018 <em>7:15 pm</em></span>

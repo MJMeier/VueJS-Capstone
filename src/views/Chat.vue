@@ -96,9 +96,9 @@ export default {
       // called when the user sends a message
       this.messageList = [...this.messageList, message];
       var params = { message: message.data.text };
-      axios.post("http://localhost:3000/api/messages").then(response => {
-        console.log(response.data);
-        this.messageList.push(response.data.message);
+      axios.post("http://localhost:3000/api/messages", params).then(response => {
+        console.log(response);
+        this.messageList.push(response.data.data.text);
       });
       console.log("onMessageWasSent...", params);
     },
@@ -109,6 +109,7 @@ export default {
     },
     closeChat() {
       // called when the user clicks on the botton to close the chat
+
       this.isChatOpen = false;
     }
   }

@@ -1,12 +1,24 @@
 <template>
   <div class="container">
     <h1>All Picks</h1>
-    <div v-for="allpick in allPicks">
-      <h2>{{ allpick.users_pick }}</h2>
-      <p> {{ allpick.confidence_point }}</p>
-      <p>{{ allpick.user_name }}</p>
-      <p>{{ allpick.game_date }}</p>
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">User Name</th>
+          <th scope="col">User Picks</th>
+          <th scope="col">Confidence Points</th>
+          <th scope="col">Game Date</th>
+        </tr>
+      </thead>
+        <tbody v-for="allpick in allPicks">
+          <tr>
+            <th scope="row">{{ allpick.user_name }}</th>
+            <td>{{ allpick.users_pick }}</td>
+            <td> {{ allpick.confidence_point }}</td>
+            <td>{{ allpick.game_date }}</td>
+          </tr>
+        </tbody>
+    </table>
   </div>
 </template>
 
