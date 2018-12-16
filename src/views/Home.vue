@@ -16,20 +16,20 @@
         <div class="figure pull-left">
           <p>Home Team</p>
           <figure >
-            <!-- <img src="extra-images/flag1.png" alt=""> -->
+            <img :src="['extra-images/' + game.home_nickname + '.png']" alt="">
           </figure>
           <a href="#">{{ game.home_nickname }}  {{ game.home_score }}</a>
         </div>
+        <p href="#">{{ game.period_time }}</p>
         <span>vs</span>
         <div class="figure pull-right">
           <p>Away Team</p>
           <figure >
-           <!--  <img src="extra-images/flag2.png" alt=""> -->
+            <img :src="['extra-images/' + game.visitor_nickname + '.png']" alt="">
           </figure>
           <a href="#">{{ game.visitor_nickname }}  {{ game.visitor_score }}</a>
         </div>
       </div>
-      <a href="#">{{ game.period_status }}</a>
     </div>
       <aside class="col-md-4">
           <!--Widget Ranking Start-->

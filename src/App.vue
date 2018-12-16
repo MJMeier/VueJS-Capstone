@@ -135,6 +135,7 @@
 </template>
 
 <style>
+background-image: url("http://localhost:8080/images/court.png");
 </style>
 
 <script>
@@ -231,4 +232,3 @@ export default {
   }
 };
 </script>
-
