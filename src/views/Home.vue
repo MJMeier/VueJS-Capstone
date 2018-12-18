@@ -31,79 +31,12 @@
         </div>
       </div>
     </div>
-      <aside class="col-md-4">
-          <!--Widget Ranking Start-->
-          <div class="widget widget_ranking">
-              <!--Heading 1 Start-->
-              <h6 class="kf_hd1">
-                  <span>Leaderboard</span>
-              </h6>
-              <!--Heading 1 END-->
-              <div class="kf_border">
-                  <!--Table Wrap Start-->
-                  <ul class="kf_table">
-                      <li>
-                          <div class="table_no">
-                              <span>1</span>
-                          </div>
-                          <div class="team_logo">
-                              <a href="#">Peter Jang</a>
-                          </div>
-                          <div class="team_point">
-                              <span>135</span>
-                          </div>
-                      </li>
-                      <li>
-                          <div class="table_no">
-                              <span>2</span>
-                          </div>
-                          <div class="team_logo">
-                              <a href="#">Mike Meier</a>
-                          </div>
-                          <div class="team_point">
-                              <span>119</span>
-                          </div>
-                      </li>
-                      <li>
-                          <div class="table_no">
-                              <span>3</span>
-                          </div>
-                          <div class="team_logo">
-                              <a href="#">Jim Smith</a>
-                          </div>
-                          <div class="team_point">
-                              <span>97</span>
-                          </div>
-                      </li>
-                      <li>
-                          <div class="table_no">
-                              <span>4</span>
-                          </div>
-                          <div class="team_logo">
-                              <a href="#">Bryan Hampton</a>
-                          </div>
-                          <div class="team_point">
-                              <span>88</span>
-                          </div>
-                      </li>
-                      <li>
-                          <div class="table_no">
-                              <span>5</span>
-                          </div>
-                          <div class="team_logo">
-                              <a href="#">Derek Johnson</a>
-                          </div>
-                          <div class="team_point">
-                              <span>75</span>
-                          </div>
-                      </li>
-                  </ul>
-                  <!--Table Wrap End-->
-              </div>
-          </div>
-      </aside>
-  </div>
 
+    <!-- set progressbar -->
+    <vue-progress-bar></vue-progress-bar>
+
+</div>
+  </div>
 </template>
 
 <style>
@@ -135,6 +68,11 @@ export default {
     );
 
     this.updateGames();
+
+    var self = this;
+    setInterval(function() {
+      self.start();
+    }, 10000);
   },
   mounted() {},
   methods: {
@@ -146,6 +84,40 @@ export default {
           self.games = response.data;
         });
       }, 10000);
+    },
+    start() {
+      this.$Progress.start();
+    },
+    set(num) {
+      this.$Progress.set(num);
+    },
+    increase(num) {
+      this.$Progress.increase(num);
+    },
+    decrease(num) {
+      this.$Progress.decrease(num);
+    },
+    finish() {
+      this.$Progress.finish();
+    },
+    fail() {
+      this.$Progress.fail();
+    },
+    test() {
+      this.$Progress.start();
+
+      this.$http
+        .jsonp(
+          "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=7waqfqbprs7pajbz28mqf6vz"
+        )
+        .then(
+          response => {
+            this.$Progress.finish();
+          },
+          response => {
+            this.$Progress.fail();
+          }
+        );
     }
   },
   computed: {}

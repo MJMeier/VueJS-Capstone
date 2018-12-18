@@ -60,12 +60,12 @@
               <div class="col-md-2"><input type="number" v-model="game.confidence_point" /></div>
               <div class="col-md-5">
                 <div class="figure pull-left">
-                  <h4 v-on:click="game.users_pick = game.home_nickname;">{{ game.home_nickname }}</h4>
+                  <h4 @click="toggleHighlight()" v-on:click="game.users_pick = game.home_nickname;">{{ game.home_nickname }}</h4>
                 </div>
               </div>
               <div class="col-md-5">
                 <div class="figure pull-right">
-                  <h4 v-on:click="game.users_pick = game.visitor_nickname;">{{ game.visitor_nickname }}</h4>
+                  <h4 @click="toggleHighlight()" v-on:click="game.users_pick = game.visitor_nickname;">{{ game.visitor_nickname }}</h4>
                 </div>
               </div>
               <p>You chose {{ game.users_pick }}</p>
@@ -78,8 +78,8 @@
 </template>
 
 <style>
-.chosen {
-  color: green;
+.highlight {
+  background-color: lime;
 }
 </style>
 
@@ -142,6 +142,9 @@ export default {
             }.bind(this)
           );
       });
+    },
+    toggleHighlight: function() {
+      event.target.classList.toggle("highlight");
     }
   },
   computed: {}

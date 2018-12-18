@@ -11,6 +11,14 @@ if (jwt) {
   axios.defaults.headers.common["Authorization"] = "Bearer " + jwt;
 }
 
+import VueProgressBar from "vue-progressbar";
+
+Vue.use(VueProgressBar, {
+  color: "rgb(143, 255, 199)",
+  failedColor: "red",
+  height: "4px"
+});
+
 Vue.config.productionTip = false;
 
 new Vue({
