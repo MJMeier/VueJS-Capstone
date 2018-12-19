@@ -24,6 +24,6 @@ export default new Router({
         { path: "/allpicks", name: "allpicks", component: AllPicks },
         { path: "/home", name: "home", component: Home },
         { path: "/chat", name: "chat", component: Chat },
-        { path: "/maketomorrowpicks", name: "chat", component: Chat }
+        { path: "/maketomorrowpicks", name: "maketomrrowpicks", component: MakeTomorrowPicks }
     ]
 });

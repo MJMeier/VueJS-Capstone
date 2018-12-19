@@ -20,35 +20,7 @@
       </div>
     </div>
 
-    <!-- <div class="kode_content_wrap">
-        <div class="result_slide_wrap">
-            <div class="result_slider">
-                <div v-for="game in games">
-                    <div class="kf_result_thumb">
-                      <span>Sep 1, 2016 <em>2:15 pm</em></span>
-                      <div class="kf_result">
-                            <div class="figure pull-left">
-                                <figure >
-                                    <img src="extra-images/flag1.png" alt="">
-                                </figure>
-                                <a href="#">{{ game.home_nickname }}</a>
-                            </div>
-                            <span>vs</span>
-                            <div class="figure pull-right">
-                                <figure >
-                                    <img src="extra-images/flag2.png" alt="">
-                                </figure>
-                                <a href="#">{{ game.visitor_nickname }}</a>
-                            </div>
-                      </div>
-                      <a href="#">Arizona Ground</a>
-                    </div>    
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <h1>{{ message }}</h1>
+    <h1 align="center">{{ message }}</h1>
     <div class="kf_result_thumb">
       <form v-on:submit.prevent="savePicks();">
         <!-- <draggable v-model="games" @start="drag=true" @end="drag=false">          -->

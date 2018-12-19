@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
+  <div class="home">
         <div class="thumb">
-  <img src="extra-images/spalding.png" alt="" height="200px"/>
+  <img src="images/bballhoop.png" alt="" height="400px"/>
   <div class="container">
     <div class="banner_caption text-center">
-      <span>Go Hard in the Paint</span>
-      <h1>NBA Confidence Pick 'Em League</h1>
     </div>
   </div>
 </div>
@@ -14,7 +12,7 @@
       <thead>
         <tr>
           <th scope="col">You Chose</th>
-          <th scope="col">Confidence Pick</th>
+          <th scope="col">Confidence Point</th>
         </tr>
       </thead>
       <tbody v-for="pick in picks">
