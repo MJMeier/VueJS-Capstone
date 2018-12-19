@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>All Picks</h1>
+    <h1>All User's Picks</h1>
     <table class="table">
       <thead>
         <tr>

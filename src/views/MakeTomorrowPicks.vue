@@ -101,7 +101,7 @@ export default {
     };
   },
   created: function() {
-    axios.get("http://localhost:3000/api/games?tomorrow=false").then(
+    axios.get("http://localhost:3000/api/games?tomorrow=true").then(
       function(response) {
         console.log(response.data);
         this.games = response.data;
