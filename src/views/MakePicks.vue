@@ -1,21 +1,12 @@
 <template>
   <div class="home">
-    <div class="kode_banner_1">
-      <div class="main_banner">
-        <div>
-          <!-- Banner Thumb START -->
-          <div class="thumb">
-            <img src="extra-images/basketball.jpg" alt="" height="450px"/>
-            <div class="container">
-              <div class="banner_caption text-center">
-                <h1>It's Game Time !</h1>
-                <p>Choose Wisely :)</p>
-              </div>
-            </div>
-          </div>
-          <!-- Banner Thumb End -->
-        </div>
-        <div>
+    <div class="thumb">
+      <img src="extra-images/basketball.jpg" alt="" height="450px"  style="object-fit: cover;"/>
+
+      <div class="container">
+        <div class="banner_caption text-center">
+          <h1>It's Game Time !</h1>
+          <p>Choose Wisely :)</p>
         </div>
       </div>
     </div>
@@ -50,11 +41,6 @@
 <style>
 .highlight {
   background-color: lime;
-}
-,
-.image_size {
-  width: 150px;
-  height: 20px;
 }
 </style>
 

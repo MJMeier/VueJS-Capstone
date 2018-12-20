@@ -2,10 +2,8 @@
   <div class="home">
     <div class="thumb">
       <img src="extra-images/airbud.png" alt="" height="450px"/>
-      <div class="container">
-      </div>
     </div>
-    <h1>All User's Picks</h1>
+    <h1 align="center">All User's Picks</h1>
     <table class="table">
       <thead>
         <tr>

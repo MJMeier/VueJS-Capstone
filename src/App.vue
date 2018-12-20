@@ -70,7 +70,7 @@
         <div class="kode_logo_bar">
           <!-- Logo Start -->
           <div class="logo">
-            <a href="#"> <img src="images/logo.png" alt="" /> </a>
+            <a href="#"> <img src="https://d2tjpz01y5bfgl.cloudfront.net/lp/2016-NBA/NBA-Logo.png" alt="" style="height: 56px; width: 175px; object-fit: contain;"/></a>
           </div>
           <!-- Logo Start -->
           <!-- Navigation Wrap Start -->

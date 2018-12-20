@@ -1,14 +1,14 @@
 <template>
   <div class="home">
         <div class="thumb">
-  <img src="images/bballhoop.png" alt="" height="400px"/>
+  <img src="extra-images/net.png" alt="" height="450px" style="object-fit: cover;" />
   <div class="container">
     <div class="banner_caption text-center">
     </div>
   </div>
 </div>
-    <h1>My Picks</h1>
-    <table class="table">
+    <h1 align="center">My Picks</h1>
+    <table class="table" align="center" style="width: 750px">
       <thead>
         <tr>
           <th scope="col">You Chose</th>
