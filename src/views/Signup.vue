@@ -22,16 +22,16 @@
 </template>
 
 <script>
-var axios = require("axios");
+var axios = require('axios');
 
 export default {
   data: function() {
     return {
-      name: "",
-      email: "",
-      password: "",
-      passwordConfirmation: "",
-      errors: []
+      name: '',
+      email: '',
+      password: '',
+      passwordConfirmation: '',
+      errors: [],
     };
   },
   methods: {
@@ -40,17 +40,17 @@ export default {
         name: this.name,
         email: this.email,
         password: this.password,
-        password_confirmation: this.passwordConfirmation
+        password_confirmation: this.passwordConfirmation,
       };
       axios
-        .post("http://localhost:3000/api/users", params)
+        .post('https://git.heroku.com/nba-confidence-pick-em-league.git/api/users', params)
         .then(response => {
-          this.$router.push("/login");
+          this.$router.push('/login');
         })
         .catch(error => {
           this.errors = error.response.data.errors;
         });
-    }
-  }
+    },
+  },
 };
 </script>

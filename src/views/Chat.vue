@@ -22,50 +22,50 @@
 </style>
 
 <script>
-var axios = require("axios");
+var axios = require('axios');
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {
       participants: [], // the list of all the participant of the conversation. `name` is the user name, `id` is used to establish the author of a message, `imageUrl` is supposed to be the user avatar.
-      titleImageUrl: "https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png",
+      titleImageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
       messageList: [], // the list of the messages to show, can be paginated and adjusted dynamically
       newMessagesCount: 0,
       isChatOpen: false, // to determine whether the chat window should be open or closed
-      showTypingIndicator: "", // when set to a value matching the participant.id it shows the typing indicator for the specific user
+      showTypingIndicator: '', // when set to a value matching the participant.id it shows the typing indicator for the specific user
       colors: {
         header: {
-          bg: "#4e8cff",
-          text: "#ffffff"
+          bg: '#4e8cff',
+          text: '#ffffff',
         },
         launcher: {
-          bg: "#4e8cff"
+          bg: '#4e8cff',
         },
         messageList: {
-          bg: "#ffffff"
+          bg: '#ffffff',
         },
         sentMessage: {
-          bg: "#4e8cff",
-          text: "#ffffff"
+          bg: '#4e8cff',
+          text: '#ffffff',
         },
         receivedMessage: {
-          bg: "#eaeaea",
-          text: "#222222"
+          bg: '#eaeaea',
+          text: '#222222',
         },
         userInput: {
-          bg: "#f4f7f9",
-          text: "#565867"
-        }
+          bg: '#f4f7f9',
+          text: '#565867',
+        },
       }, // specifies the color scheme for the component
       alwaysScrollToBottom: false, // when set to true always scrolls the chat to the bottom when new events are in (new message, user starts typing...)
-      messageStyling: true // enables *bold* /emph/ _underline_ and such (more info at github.com/mattezza/msgdown)
+      messageStyling: true, // enables *bold* /emph/ _underline_ and such (more info at github.com/mattezza/msgdown)
     };
   },
   created: function() {
-    axios.get("http://localhost:3000/api/users").then(response => {
+    axios.get('http://localhost:3000/api/users').then(response => {
       this.participants = response.data;
     });
-    axios.get("http://localhost:3000/api/messages").then(response => {
+    axios.get('http://localhost:3000/api/messages').then(response => {
       this.messageList = response.data;
     });
     // this.participants = [
@@ -89,18 +89,18 @@ export default {
     sendMessage(text) {
       if (text.length > 0) {
         this.newMessagesCount = this.isChatOpen ? this.newMessagesCount : this.newMessagesCount + 1;
-        this.onMessageWasSent({ author: "support", type: "text", data: { text } });
+        this.onMessageWasSent({ author: 'support', type: 'text', data: { text } });
       }
     },
     onMessageWasSent(message) {
       // called when the user sends a message
       this.messageList = [...this.messageList, message];
       var params = { message: message.data.text };
-      axios.post("http://localhost:3000/api/messages", params).then(response => {
+      axios.post('https://git.heroku.com/nba-confidence-pick-em-league.git/api/messages', params).then(response => {
         console.log(response);
         this.messageList.push(response.data.data.text);
       });
-      console.log("onMessageWasSent...", params);
+      console.log('onMessageWasSent...', params);
     },
     openChat() {
       // called when the user clicks on the fab button to open the chat
@@ -111,7 +111,7 @@ export default {
       // called when the user clicks on the botton to close the chat
 
       this.isChatOpen = false;
-    }
-  }
+    },
+  },
 };
 </script>

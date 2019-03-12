@@ -44,21 +44,21 @@
 </style>
 
 <script>
-var axios = require("axios");
-var draggable = require("vuedraggable");
+var axios = require('axios');
+var draggable = require('vuedraggable');
 
 export default {
   components: {
-    draggable
+    draggable,
   },
   data: function() {
     return {
-      message: "Make Picks",
-      games: []
+      message: 'Make Picks',
+      games: [],
     };
   },
   created: function() {
-    axios.get("http://localhost:3000/api/games?tomorrow=true").then(
+    axios.get('https://git.heroku.com/nba-confidence-pick-em-league.git/api/games?tomorrow=true').then(
       function(response) {
         console.log(response.data);
         this.games = response.data;
@@ -79,17 +79,17 @@ export default {
       });
     },
     savePicks: function() {
-      console.log("savePicks");
+      console.log('savePicks');
       this.games.forEach(game => {
-        console.log("Pick info:", game.id, game.confidence_point, game.users_pick);
+        console.log('Pick info:', game.id, game.confidence_point, game.users_pick);
         var params = {
           game_id: game.id,
           confidence_point: game.confidence_point,
           users_pick: game.users_pick,
-          game_date: game.date
+          game_date: game.date,
         };
         axios
-          .post("http://localhost:3000/api/user_games", params)
+          .post('https://git.heroku.com/nba-confidence-pick-em-league.git/api/user_games', params)
           .then(
             function(response) {
               console.log(response);
@@ -104,9 +104,9 @@ export default {
       });
     },
     toggleHighlight: function() {
-      event.target.classList.toggle("highlight");
-    }
+      event.target.classList.toggle('highlight');
+    },
   },
-  computed: {}
+  computed: {},
 };
 </script>

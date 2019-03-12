@@ -114,7 +114,7 @@
 </style>
 
 <script>
-var axios = require("axios");
+var axios = require('axios');
 
 // var dt = new Date();
 // document.getElementById("datetime").innerHTML = dt.toLocaleString();
@@ -122,19 +122,19 @@ var axios = require("axios");
 export default {
   data: function() {
     return {
-      message: "Live Scoreboard",
+      message: 'Live Scoreboard',
       games: [],
-      users: []
+      users: [],
     };
   },
   created: function() {
-    axios.get("http://localhost:3000/api/games").then(
+    axios.get('https://git.heroku.com/nba-confidence-pick-em-league.git/api/games').then(
       function(response) {
         console.log(response.data);
         this.games = response.data;
       }.bind(this)
     );
-    axios.get("http://localhost:3000/api/users").then(
+    axios.get('https://git.heroku.com/nba-confidence-pick-em-league.git/api/users').then(
       function(response) {
         console.log(response.data);
         this.users = response.data;
@@ -153,7 +153,7 @@ export default {
     updateGames: function() {
       var self = this;
       setInterval(function() {
-        axios.get("http://localhost:3000/api/games").then(function(response) {
+        axios.get('https://git.heroku.com/nba-confidence-pick-em-league.git/api/games').then(function(response) {
           console.log(response.data);
           self.games = response.data;
         });
@@ -182,7 +182,7 @@ export default {
 
       this.$http
         .jsonp(
-          "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=7waqfqbprs7pajbz28mqf6vz"
+          'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?apikey=7waqfqbprs7pajbz28mqf6vz'
         )
         .then(
           response => {
@@ -192,8 +192,8 @@ export default {
             this.$Progress.fail();
           }
         );
-    }
+    },
   },
-  computed: {}
+  computed: {},
 };
 </script>

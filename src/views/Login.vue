@@ -17,36 +17,36 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  template: "#login-page",
+  template: '#login-page',
   data: function() {
     return {
-      email: "",
-      password: "",
-      errors: []
+      email: '',
+      password: '',
+      errors: [],
     };
   },
   methods: {
     submit: function() {
       var params = {
         email: this.email,
-        password: this.password
+        password: this.password,
       };
       axios
-        .post("http://localhost:3000/api/sessions", params)
+        .post('https://git.heroku.com/nba-confidence-pick-em-league.git/api/sessions', params)
         .then(response => {
-          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
-          localStorage.setItem("jwt", response.data.jwt);
-          this.$router.push("/");
+          axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.jwt;
+          localStorage.setItem('jwt', response.data.jwt);
+          this.$router.push('/');
         })
         .catch(error => {
-          this.errors = ["Invalid email or password."];
-          this.email = "";
-          this.password = "";
+          this.errors = ['Invalid email or password.'];
+          this.email = '';
+          this.password = '';
         });
-    }
-  }
+    },
+  },
 };
 </script>

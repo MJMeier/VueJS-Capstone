@@ -26,22 +26,22 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
 
 export default {
   data: function() {
     return {
-      allPicks: []
+      allPicks: [],
     };
   },
   created: function() {
-    axios.get("http://localhost:3000/api/allpicks").then(
+    axios.get('https://git.heroku.com/nba-confidence-pick-em-league.git/api/allpicks').then(
       function(response) {
         console.log(response.data);
-        this.allPicks = response.data["user_games"];
+        this.allPicks = response.data['user_games'];
       }.bind(this)
     );
   },
-  methods: {}
+  methods: {},
 };
 </script>
