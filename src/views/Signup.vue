@@ -43,7 +43,7 @@ export default {
         password_confirmation: this.passwordConfirmation,
       };
       axios
-        .post('nba-confidence-pick-em-league.herokuapp.com/api/users', params)
+        .post('https://nba-confidence-pick-em-league.herokuapp.com/api/users', params)
         .then(response => {
           this.$router.push('/login');
         })

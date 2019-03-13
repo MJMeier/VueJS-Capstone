@@ -128,13 +128,13 @@ export default {
     };
   },
   created: function() {
-    axios.get('nba-confidence-pick-em-league.herokuapp.com/api/games').then(
+    axios.get('https://nba-confidence-pick-em-league.herokuapp.com/api/games').then(
       function(response) {
         console.log(response.data);
         this.games = response.data;
       }.bind(this)
     );
-    axios.get('nba-confidence-pick-em-league.herokuapp.com/api/users').then(
+    axios.get('https://nba-confidence-pick-em-league.herokuapp.com/api/users').then(
       function(response) {
         console.log(response.data);
         this.users = response.data;
@@ -153,7 +153,7 @@ export default {
     updateGames: function() {
       var self = this;
       setInterval(function() {
-        axios.get('nba-confidence-pick-em-league.herokuapp.com/api/games').then(function(response) {
+        axios.get('https://nba-confidence-pick-em-league.herokuapp.com/api/games').then(function(response) {
           console.log(response.data);
           self.games = response.data;
         });

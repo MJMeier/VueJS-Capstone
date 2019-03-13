@@ -35,7 +35,7 @@ export default {
     };
   },
   created: function() {
-    axios.get('nba-confidence-pick-em-league.herokuapp.com/api/allpicks').then(
+    axios.get('https://nba-confidence-pick-em-league.herokuapp.com/api/allpicks').then(
       function(response) {
         console.log(response.data);
         this.allPicks = response.data['user_games'];
