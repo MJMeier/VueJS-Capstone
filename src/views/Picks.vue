@@ -39,7 +39,7 @@ export default {
     };
   },
   created: function() {
-    axios.get('https://git.heroku.com/nba-confidence-pick-em-league.git/api/user_games').then(
+    axios.get('nba-confidence-pick-em-league.herokuapp.com/api/user_games').then(
       function(response) {
         console.log(response.data);
         this.picks = response.data['user_games'];

@@ -35,7 +35,7 @@ export default {
         password: this.password,
       };
       axios
-        .post('https://git.heroku.com/nba-confidence-pick-em-league.git/api/sessions', params)
+        .post('nba-confidence-pick-em-league.herokuapp.com/api/sessions', params)
         .then(response => {
           axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.jwt;
           localStorage.setItem('jwt', response.data.jwt);

@@ -62,10 +62,10 @@ export default {
     };
   },
   created: function() {
-    axios.get('http://localhost:3000/api/users').then(response => {
+    axios.get('nba-confidence-pick-em-league.herokuapp.com/api/users').then(response => {
       this.participants = response.data;
     });
-    axios.get('http://localhost:3000/api/messages').then(response => {
+    axios.get('nba-confidence-pick-em-league.herokuapp.com/api/messages').then(response => {
       this.messageList = response.data;
     });
     // this.participants = [
@@ -96,7 +96,7 @@ export default {
       // called when the user sends a message
       this.messageList = [...this.messageList, message];
       var params = { message: message.data.text };
-      axios.post('https://git.heroku.com/nba-confidence-pick-em-league.git/api/messages', params).then(response => {
+      axios.post('nba-confidence-pick-em-league.herokuapp.com/api/messages', params).then(response => {
         console.log(response);
         this.messageList.push(response.data.data.text);
       });

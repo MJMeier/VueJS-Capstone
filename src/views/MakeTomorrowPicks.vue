@@ -58,7 +58,7 @@ export default {
     };
   },
   created: function() {
-    axios.get('https://git.heroku.com/nba-confidence-pick-em-league.git/api/games?tomorrow=true').then(
+    axios.get('nba-confidence-pick-em-league.herokuapp.com/api/games?tomorrow=true').then(
       function(response) {
         console.log(response.data);
         this.games = response.data;
@@ -89,7 +89,7 @@ export default {
           game_date: game.date,
         };
         axios
-          .post('https://git.heroku.com/nba-confidence-pick-em-league.git/api/user_games', params)
+          .post('nba-confidence-pick-em-league.herokuapp.com/api/user_games', params)
           .then(
             function(response) {
               console.log(response);
